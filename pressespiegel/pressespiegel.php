@@ -1,8 +1,8 @@
 <?php
-wp_enqueue_style( "pt-stimm", plugin_dir_url(__FILE__)."style.css" );
+wp_enqueue_style( "pt-pressespiegel", plugin_dir_url(__FILE__)."style.css" );
 
 
-class PT_stimm {
+class PT_pressespiegel {
 
 
 	static public function shortcode($atts) {

@@ -24,8 +24,8 @@ if (!function_exists("piratentools_main_menu")) {
 	}
 }
 
-add_action( 'admin_menu', 'PT_stimm_main_menu' );
-function PT_stimm_main_menu() {
+add_action( 'admin_menu', 'PT_pressespiegel_main_menu' );
+function PT_pressespiegel_main_menu() {
 	add_submenu_page( "piratentools", "Pressespiegel", "Pressespiegel", "manage_options", "pt_pressespiegel", array("PT_pressespiegel", "adminmenu") );
 }
 
