@@ -6,7 +6,6 @@ if ($_POST['do'] == 1) {
 	//require('../../../../wp-blog-header.php');
 	require_once( '../../../../wp-load.php' );
 	$options = get_option("pt_pressespiegel");
-	print_r($options);
 	
 	$data_date = strtotime($_POST['date']);
 	$source_s = $_POST['source'];
@@ -35,7 +34,7 @@ if ($_POST['do'] == 1) {
 	<html>
 	<head>
 	</head>
-	<body onoad="window.close()"><pre>
+	<body onload="window.close()"><pre>
 	</pre></body>
 	</html>
 	
@@ -122,11 +121,6 @@ foreach ($titles as $k => $t) {
 <input type="hidden" name="do" value="1">
 <input type="hidden" name="url" value="<?=$url;?>">
 </form>
-<?php
-		echo "<pre>";
-		print_r($_GET);
-		echo "</pre>";
-?>
 </body>
 </html>
 <?php } ?>

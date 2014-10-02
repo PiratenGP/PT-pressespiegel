@@ -8,7 +8,7 @@
 <div class="wrap pt-stimm">
 <h2>PT-Pressespiegel</h2>
 <hr>
-<a href="admin.php?page=pt_pressespiegel&pt-pressespiegel-page=home">Übersicht</a> | Warteschlange
+<a href="admin.php?page=pt_pressespiegel&pt-pressespiegel-page=home">Übersicht</a> | Warteschlange (<?php echo count($options['queue']); ?>)
 <hr>
 <h3>Button</h3>
 <a href="javascript:(function(){var%20a=window,enc=document.charset,b=document,c=encodeURIComponent,e=c(document.title),t=document.getElementsByTagName('h1'),tt='';
