@@ -15,7 +15,19 @@
 for (u of t) {
 tt += '&t[]='+u.textContent;
 }
-var d=a.open('<?=$url;?>/land.php?output=popup&url='+c(b.location)+tt+'&enc='+enc+'&title='+e,'bkmk_popup','left='+((a.screenX||a.screenLeft)+10)+',top='+((a.screenY||a.screenTop)+10)+',height=400px,width=550px,resizable=1,alwaysRaised=1');a.setTimeout(function(){d.focus()},300);})();">Bookmark</a>
+var ti0 = document.getElementsByTagName('time');
+var ti1 = document.getElementsByName('date');
+var time = '';
+if ((ti0 != null) && (ti0[0] != null))
+{
+time = ti0[0].textContent;
+} else {
+if ((ti1 != null) && (ti1[0] != null))
+{
+time = ti1[0].getAttribute('content');
+}
+}
+var d=a.open('<?=$url;?>/land.php?output=popup&url='+c(b.location)+tt+'&time='+time+'&enc='+enc+'&title='+e,'bkmk_popup','left='+((a.screenX||a.screenLeft)+10)+',top='+((a.screenY||a.screenTop)+10)+',height=400px,width=550px,resizable=1,alwaysRaised=1');a.setTimeout(function(){d.focus()},300);})();">Bookmark</a>
 <hr>
 <h3>Warteschlange</h3>
 <?php

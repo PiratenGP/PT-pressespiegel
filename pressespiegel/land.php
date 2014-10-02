@@ -1,10 +1,10 @@
 <?php
-
+define('WP_USE_THEMES', false);
+	require_once( '../../../../wp-load.php' );
 if ($_POST['do'] == 1) {
 
-	define('WP_USE_THEMES', false);
-	//require('../../../../wp-blog-header.php');
-	require_once( '../../../../wp-load.php' );
+	
+
 	$options = get_option("pt_pressespiegel");
 	
 	$data_date = strtotime($_POST['date']);
@@ -24,7 +24,7 @@ if ($_POST['do'] == 1) {
 	
 	$newar = array(
 		"date"		=>		$data_date,
-		"title"		=>		$data_title,
+		"title"		=>		stripslashes($data_title),
 		"source"	=>		$data_source,
 		"url"		=>		$data_url,
 	);
@@ -73,19 +73,35 @@ if (strpos($ttitle, " | ")) {
 	$titles[] = substr($ttitle, 0, strpos($ttitle, " | "));
 }
 
+$date0 = strtotime($_GET['time']);
+$date = date("d.m.Y", $date0);
 
-
-$date = date("d.m.Y", time());
-
-$source
 ?>
 	<html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+	body {
+		font-family: sans-serif;
+	}
+	table {
+		border-collapse: collapse;
+		background-color: #ddd;
+	}
+	table td {
+		border: 1px solid black;
+		padding: 5px;
+		
+	}
+	input[type=text] {
+		width: 80%;
+	}
+	</style>
 	</head>
 	<body>
+	<h1><?php bloginfo( 'name' ); ?></h1>
 <form method="post">
-<table border="1">
+<table>
 <tr>
 <td><strong>Datum</strong></td>
 <td><input type="text" name="date" value="<?=$date;?>" /></td>
@@ -106,7 +122,7 @@ $source
 $et = "checked=\"checked\"";
 foreach ($titles as $k => $t) {
 	?>
-	<input id="title<?=$k;?>" <?=$et;?> type="radio" name="title" value="<?=$t;?>" /> <label for="title<?=$k;?>"><?=$t;?></label><hr>
+	<input id="title<?=$k;?>" <?=$et;?> type="radio" name="title" value="<?=htmlspecialchars($t);?>" /> <label for="title<?=$k;?>"><?=$t;?></label><hr>
 	<?php
 	$et = "";
 }
@@ -114,12 +130,12 @@ foreach ($titles as $k => $t) {
 <input id="titlea" <?=$et;?> type="radio" name="title" value="0" /> <input type="text" name="title0" /></td></tr>
 <tr>
 <td><strong>URL</strong></td>
-<td><?=$url;?></td>
+<td><small><?=$url;?></small></td>
 </tr>
-</table>
+</table><p>
 <input type="submit"/>
 <input type="hidden" name="do" value="1">
-<input type="hidden" name="url" value="<?=$url;?>">
+<input type="hidden" name="url" value="<?=$url;?>"></p>
 </form>
 </body>
 </html>
