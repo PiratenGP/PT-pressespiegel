@@ -28,7 +28,7 @@ if ((ti1 != null) && (ti1[0] != null))
 time = ti1[0].getAttribute('content');
 }
 }
-var d=a.open('<?=$url;?>/land.php?output=popup&url='+c(b.location)+tt+'&time='+time+'&enc='+enc+'&title='+e,'bkmk_popup','left='+((a.screenX||a.screenLeft)+10)+',top='+((a.screenY||a.screenTop)+10)+',height=400px,width=550px,resizable=1,alwaysRaised=1');a.setTimeout(function(){d.focus()},300);})();">Presseecho <?php bloginfo('name'); ?></a>
+var d=a.open('<?=$url;?>/land.php?output=popup&url='+c(b.location)+tt+'&time='+time+'&enc='+enc+'&title='+e,'bkmk_popup','left='+((a.screenX||a.screenLeft)+10)+',top='+((a.screenY||a.screenTop)+10)+',height=500px,width=550px,resizable=1,alwaysRaised=1');a.setTimeout(function(){d.focus()},300);})();">Presseecho <?php bloginfo('name'); ?></a>
 <hr>
 <h3>Warteschlange</h3>
 <?php
