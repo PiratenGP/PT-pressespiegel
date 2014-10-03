@@ -122,7 +122,7 @@ $date = date("d.m.Y", $date0);
 $et = "checked=\"checked\"";
 foreach ($titles as $k => $t) {
 	?>
-	<input id="title<?=$k;?>" <?=$et;?> type="radio" name="title" value="<?=htmlspecialchars($t);?>" /> <label for="title<?=$k;?>"><?=$t;?></label><hr>
+	<input id="title<?=$k;?>" <?=$et;?> type="radio" name="title" value="<?=htmlspecialchars(stripslashes($t));?>" /> <label for="title<?=$k;?>"><?=htmlspecialchars(stripslashes($t));?></label><hr>
 	<?php
 	$et = "";
 }
