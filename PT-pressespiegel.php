@@ -3,7 +3,7 @@
 Plugin Name: Piraten-Tools / Pressespiegel
 Plugin URI: https://github.com/PiratenGP/PT-pressespiegel
 Description: Piraten-Tools / Pressespiegel
-Version: 0.0.1
+Version: 0.1.0
 Author: @stoppegp
 Author URI: http://stoppe-gp.de
 License: CC-BY-SA 3.0
